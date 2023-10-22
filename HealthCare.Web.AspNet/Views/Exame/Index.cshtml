@@ -1,0 +1,59 @@
+﻿@model IEnumerable<HealthCare.Web.AspNet.Models.ExameModel>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Exames</title>
+</head>
+
+<body>
+    <h1>Exames</h1>
+    <p>
+        <a asp-controller="Exame" asp-action="Cadastrar">Novo Exame</a>
+    </p>
+    <table class="table" border="1">
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Resultado</th>
+            <th>Data de Realização</th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <label>@item.IdExame</label>
+                </td>
+                <td>
+                    <label>@item.NmExame</label>
+                </td>
+                <td>
+                    <label>@item.VlResultado</label>
+                </td>
+                <td>
+                    <label>@item.DtExame</label>
+                </td>
+                <td>
+                    <a asp-controller="Exames"
+                       asp-action="Editar"
+                       asp-route-id="@item.IdExame">Editar</a>
+
+                    <a asp-controller="Exames"
+                       asp-action="Consultar"
+                       asp-route-id="@item.IdExame">Consultar</a>
+
+                    <a asp-controller="Exames"
+                       asp-action="Excluir"
+                       asp-route-id="@item.IdExame">Excluir</a>
+                </td>
+
+
+            </tr>
+        }
+
+    </table>
+
+</body>
+</html>

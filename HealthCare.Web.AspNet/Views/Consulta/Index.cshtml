@@ -1,0 +1,58 @@
+﻿@model IEnumerable<HealthCare.Web.AspNet.Models.ConsultaModel>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Agenda de Consultas</title>
+</head>
+
+<body>
+    <h1>Agenda de Consultas</h1>
+    <p>
+        <a asp-controller="Consulta" asp-action="Cadastrar">Nova Consulta</a>
+        
+    </p>
+    <table class="table" border="1">
+        <tr>
+            <th>Id</th>
+            <th>Data</th>
+            <th>Tipo</th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <label>@item.IdConsulta</label>
+                </td>
+                <td>
+                    <label>@item.DtConsulta</label>
+                </td>
+                <td>
+                    <label>@item.TpConsulta</label>
+                </td>
+                <td>
+                    <a asp-controller="Consultas"
+                       asp-action="Editar"
+                       asp-route-id="@item.IdConsulta">Editar</a>
+
+                    <a asp-controller="Consultas"
+                       asp-action="Consultar"
+                       asp-route-id="@item.IdConsulta">Consultar</a>
+
+                    <a asp-controller="Consultas"
+                       asp-action="Excluir"
+                       asp-route-id="@item.IdConsulta">Excluir</a>
+                </td>
+
+
+            </tr>
+        }
+
+    </table>
+
+</body>
+</html>
+
+

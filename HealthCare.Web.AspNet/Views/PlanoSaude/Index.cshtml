@@ -1,0 +1,59 @@
+﻿@model IEnumerable<HealthCare.Web.AspNet.Models.PlanoSaudeModel>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Planos</title>
+</head>
+
+<body>
+    <h1>Planos de Saúde</h1>
+
+    <p>
+        <a asp-controller="PlanoSaude" asp-action="Cadastrar">Novo Plano</a>
+    </p>
+
+    <table class="table" border="1">
+        <tr>
+            <th>Id</th>
+            <th>Tipo</th>
+            <th>Nome</th>
+            <th>Cobertura</th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <label>@item.IdPlano</label>
+                </td>
+                <td>
+                    <label>@item.TpPlano</label>
+                </td>
+                <td>
+                    <label>@item.NmPlano</label>
+                </td>
+                <td>
+                    <label>@item.TpCobertura</label>
+                </td>
+                <td>
+                    <a asp-controller="Planos"
+                       asp-action="Editar"
+                       asp-route-id="@item.IdPlano">Editar</a>
+
+                    <a asp-controller="Planos"
+                       asp-action="Consultar"
+                       asp-route-id="@item.IdPlano">Consultar</a>
+
+                    <a asp-controller="Planos"
+                       asp-action="Excluir"
+                       asp-route-id="@item.IdPlano">Excluir</a>
+                </td>
+            </tr>
+        }
+
+    </table>
+
+</body>
+</html>

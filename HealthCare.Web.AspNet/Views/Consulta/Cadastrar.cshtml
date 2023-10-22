@@ -1,0 +1,26 @@
+﻿@model HealthCare.Web.AspNet.Models.ConsultaModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cadastrar</title>
+</head>
+
+<body>
+    <h1>Nova Consulta</h1>
+
+    <form asp-action="Cadastrar" asp-controller="Consulta" method="post">
+        <label asp-for="IdConsulta"></label><br>
+        <input asp-for="IdConsulta" value="123"/><br>
+
+        <label asp-for="DtConsulta">Data da Consulta:</label><br>
+        <input asp-for="DtConsulta" value="25/10/2023"><br>
+
+        <label asp-for="TpConsulta">Tipo da Consulta:</label><br>
+        <input asp-for="TpConsulta" value="online"><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
