@@ -33,7 +33,7 @@ namespace HealthCare.Web.AspNet.Repository
                 while (dataReader.Read())
                 {
                     ConsultaModel consulta = new ConsultaModel();
-                    consulta.IdConsulta = Convert.ToString(dataReader["IDCONSULTA"]);
+                    consulta.IdConsulta = Convert.ToString(dataReader["IDCONSULT"]);
                     consulta.DtConsulta = Convert.ToString(dataReader["DTCONSULTA"]);
                     consulta.TpConsulta = Convert.ToString(dataReader["TPCONSULTA"]);
 
