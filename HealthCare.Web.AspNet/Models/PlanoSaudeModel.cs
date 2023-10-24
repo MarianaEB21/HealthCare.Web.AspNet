@@ -2,26 +2,19 @@
 {
     public class PlanoSaudeModel
     {
-        public PlanoSaudeModel()
-        {
-        }
+        public PlanoSaudeModel() { }
 
-        public PlanoSaudeModel(String idPlano, String tpPlano, String nmPlano, String tpCobertura)
+        public PlanoSaudeModel(string idPlano, string? tpPlano, string? nmPlano, string? tpCobertura)
         {
             this.IdPlano = idPlano;
             this.TpPlano = tpPlano;
             this.NmPlano = nmPlano;
             this.TpCobertura = tpCobertura;
-
         }
-
-        public String? IdPlano { get; set; }
-
-        public String? TpPlano { get; set; }
-
-        public String? NmPlano { get; set; }
-
-        public String? TpCobertura { get; set; }
+        public string IdPlano { get; set; }
+        public string? TpPlano { get; set; }
+        public string? NmPlano { get; set; }
+        public string? TpCobertura { get; set; }
 
     }
 }

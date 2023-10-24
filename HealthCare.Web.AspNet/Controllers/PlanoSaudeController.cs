@@ -19,10 +19,17 @@ namespace HealthCare.Web.AspNet.Controllers
         {
             return View(planos);
         }
+
         [HttpGet]
         public IActionResult Cadastrar()
         {
             return View(new PlanoSaudeModel());
+        }
+
+        [HttpGet]
+        public IActionResult Editar()
+        {
+            return View();
         }
     }
 }

@@ -1,4 +1,12 @@
+using HealthCare.Web.AspNet.Repository.Context;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+
+//Método pronto para a aplicação fazer o Gerenciamento da conexão. Independencia do framework
+var connectionString = builder.Configuration.GetConnectionString("DatabaseConnection");
+builder.Services.AddDbContext<DataBaseContext>(options => options.UseOracle(connectionString).EnableSensitiveDataLogging(true));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
